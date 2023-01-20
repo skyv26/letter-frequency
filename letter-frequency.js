@@ -1,9 +1,37 @@
-// module.exports = function (txt) {
-//   // write your code here
-// }
+module.exports = function (txt) {
+  let resultantArray = [];
+  let sayAEmptyObject = {};
+  txt.split('').forEach((each) => {
+    if(sayAEmptyObject.hasOwnProperty(each)) {
+      sayAEmptyObject[each] += 1
+    }
+    else {
+      sayAEmptyObject[each] = 1;
+    }
+  });
+  Object.keys(sayAEmptyObject).forEach((each) => {
+    resultantArray.push([each, sayAEmptyObject[each]])
+  })
 
-function countString() {
-  console.log('I work');
+  return resultantArray;
 }
 
-countString();
+// const abc = (txt) => {
+//   let resultantArray = [];
+//   let sayAEmptyObject = {};
+//   txt.split('').forEach((each) => {
+//     if(sayAEmptyObject.hasOwnProperty(each)) {
+//       sayAEmptyObject[each] += 1
+//     }
+//     else {
+//       sayAEmptyObject[each] = 1;
+//     }
+//   });
+//   Object.keys(sayAEmptyObject).forEach((each) => {
+//     resultantArray.push([each, sayAEmptyObject[each]])
+//   })
+
+//   console.log(resultantArray);
+// }
+
+// abc('in various ways--with barefaced')
